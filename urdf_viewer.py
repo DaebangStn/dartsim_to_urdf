@@ -12,8 +12,6 @@ Actor Scaling
 - Loads a handful of MJCF and URDF assets and scales them using the runtime scaling API
 """
 
-import math
-import numpy as np
 from isaacgym import gymapi, gymutil
 
 
@@ -28,15 +26,6 @@ scale = 0.01
 
 asset_descriptors = [
     AssetDesc("skeleton.urdf", True),
-    # AssetDesc("HumanExoskeleton-model/Human48DOF_URDFmodel/HumanURDFmodel.urdf", False)
-    # AssetDesc("urdf/sektion_cabinet_model/urdf/sektion_cabinet.urdf", False),
-    # AssetDesc("urdf/franka_description/robots/franka_panda.urdf", True),
-    # AssetDesc("urdf/kinova_description/urdf/kinova.urdf", False),
-    # AssetDesc("urdf/anymal_b_simple_description/urdf/anymal.urdf", True),
-    # AssetDesc("urdf/kuka_allegro_description/kuka_allegro.urdf", False),
-    # AssetDesc("mjcf/open_ai_assets/hand/shadow_hand.xml", False),
-    # AssetDesc("urdf/objects/cube_multicolor.urdf", True),
-    # AssetDesc("urdf/cartpole.urdf", True),
 ]
 
 args = gymutil.parse_arguments()
@@ -76,7 +65,7 @@ if viewer is None:
     quit()
 
 # load asset
-asset_root = "./data/imitationLearning"
+asset_root = "./data"
 
 assets = []
 for asset_desc in asset_descriptors:
