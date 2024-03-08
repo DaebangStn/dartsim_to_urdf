@@ -4,9 +4,9 @@ from xml.dom import minidom
 import transformations as tf
 import numpy as np
 
-input_dart = "./data/skeleton.xml"
-output_urdf = "skeleton.urdf"
-obj_root_in_urdf = "data/OBJ"
+input_dart = "data/skeleton.xml"
+output_urdf = "data/skeleton.urdf"
+relative_path_of_obj_to_urdf = "skeleton_obj"
 
 
 class Node:
@@ -87,7 +87,7 @@ def get_link(_body, _node):
 
     # construct the visual element
     scale = "1.0 1.0 1.0"
-    filename = os.path.join(obj_root_in_urdf, _body.get("obj"))
+    filename = os.path.join(relative_path_of_obj_to_urdf, _body.get("obj"))
     visual_origin = ET.SubElement(link_visual, "origin", attrib={"rpy": vis_rpy, "xyz": vis_xyz})
     visual_geometry = ET.SubElement(link_visual, "geometry")
     geometry_mesh = ET.SubElement(visual_geometry, "mesh", attrib={"filename": filename, "scale": scale})
