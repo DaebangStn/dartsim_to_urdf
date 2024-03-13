@@ -21,8 +21,8 @@ class AssetDesc:
         self.flip_visual_attachments = flip_visual_attachments
 
 
-# scale = 1.0
-scale = 0.01
+scale = 1.0
+# scale = 0.01
 
 asset_descriptors = [
     AssetDesc("skeleton.urdf", True),

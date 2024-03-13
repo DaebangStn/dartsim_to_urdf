@@ -6,7 +6,7 @@ import numpy as np
 
 input_dart = "data/skeleton.xml"
 output_urdf = "data/skeleton.urdf"
-relative_path_of_obj_to_urdf = "skeleton_obj"
+relative_path_of_obj_to_urdf = "scaled"
 
 
 class Node:
